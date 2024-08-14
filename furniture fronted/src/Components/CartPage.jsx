@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Cart() {
+function CartPage() {
   return (
     <>
       <div className="untree_co-section before-footer-section">
@@ -191,7 +192,9 @@ function Cart() {
                         className="btn btn-black btn-lg py-3 btn-block"
                         onclick="window.location='checkout.html'"
                       >
+                        <Link to="/checkout" className="text-white">
                         Proceed To Checkout
+                        </Link>
                       </button>
                     </div>
                   </div>
@@ -205,4 +208,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CartPage;

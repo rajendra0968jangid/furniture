@@ -1,6 +1,6 @@
 import React from "react";
 
-function ThankYou() {
+function ThankYouPage() {
   return (
     <>
       <div className="untree_co-section">
@@ -41,4 +41,4 @@ function ThankYou() {
   );
 }
 
-export default ThankYou;
+export default ThankYouPage;

@@ -10,6 +10,8 @@ import Cart from './Pages/Cart'
 import Contact from './Pages/Contact'
 import Service from './Pages/Service'
 import Shop from './Pages/Shop'
+import CheckOut from './Pages/CheckOut'
+import ThankYou from './Pages/ThankYou'
 function App() {
   return (
     <>
@@ -22,6 +24,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Service />} />
+          <Route path="/checkout" element={<CheckOut />} />
+          <Route path="/thankyou" element={<ThankYou />} />
         </Routes>
       </BrowserRouter>
     </>

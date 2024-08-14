@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CheckoutSection() {
   return (
@@ -505,7 +506,10 @@ function CheckoutSection() {
                         className="btn btn-black btn-lg py-3 btn-block"
                         onclick="window.location='thankyou.html'"
                       >
+                        <Link to="/thankyou" className="text-white">
+                        
                         Place Order
+                        </Link>
                       </button>
                     </div>
                   </div>
