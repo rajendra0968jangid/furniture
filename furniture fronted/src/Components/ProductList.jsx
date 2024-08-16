@@ -40,9 +40,7 @@ function ProductList() {
         <div className="container">
           <div className="row">
             {cardData.map((item,index)=>(
-              <CardProductList
-              one={item}
-              />
+              <CardProductList  one={item} />
             ))}
           </div>
         </div>
