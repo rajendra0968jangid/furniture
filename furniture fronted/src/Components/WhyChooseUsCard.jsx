@@ -23,14 +23,20 @@ function WhyChooseUsCard() {
                 </p>
               </div>
             </div> */}
-            <Sh one={{icon:"images/truck.svg", title:"Fast Free Shipping",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/> 
-            <Sh one={{icon:"images/bag.svg", title:"easy to shop",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>
-            <Sh one={{icon:"images/support.svg", title:"24/7 support",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>
-            <Sh one={{icon:"images/return.svg", title:"hassee free return",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>
-            <Sh one={{icon:"images/truck.svg", title:"Fast Free Shipping",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>     
-            <Sh one={{icon:"images/bag.svg", title:"easy to shop",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>
-            <Sh one={{icon:"images/support.svg", title:"24/7 support",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>
-            <Sh one={{icon:"images/return.svg", title:"hassee free return",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac" }}/>
+            <Sh one ={{icon:"images/truck.svg",title:"Fast Free Shipping",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/bag.svg",title:"Easy to Shop",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/support.svg",title:"24/7 Support",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/return.svg",title:"Hassle Free Returns",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/truck.svg",title:"Fast Free Shipping",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/bag.svg",title:"Easy to Shop",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/support.svg",title:"24/7 Support",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+            <Sh one ={{icon:"images/return.svg",title:"Hassle Free Returns",description:"Donec vitae odio quis nisl dapibus malesuada. Nullam ac iquet velit. Aliquam vulputate"}}/>
+           
+            
+           
+            
+            
+          
           </div>
         </div>
       </div>
