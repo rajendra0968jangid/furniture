@@ -1,4 +1,5 @@
 import React from "react";
+import Tmem from "./Tmem";
 
 function OurTeams() {
   return (
@@ -12,84 +13,19 @@ function OurTeams() {
           </div>
           <div className="row">
             {/* Start Column 1 */}
-            <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-              <img src="images/person_1.jpg" className="img-fluid mb-5" />
-              <h3 clas="">
-                <a href="#">
-                  <span className="">Lawson</span> Arnold
-                </a>
-              </h3>
-              <span className="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>
-                Separated they live in. Separated they live in Bookmarksgrove
-                right at the coast of the Semantics, a large language ocean.
-              </p>
-              <p className="mb-0">
-                <a href="#" className="more dark">
-                  Learn More <span className="icon-arrow_forward" />
-                </a>
-              </p>
-            </div>
-            {/* End Column 1 */}
+           
+            <Tmem one={{ image: "images/person_1.jpg", name: "Lawson Arnold", postion: "CEO, Founder, Atty", description: " Separated they live in. Separated they live in Bookmarksgrov" , more:"Learn More"}}/>
+            {/* End Column 1 */ }
             {/* Start Column 2 */}
-            <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-              <img src="images/person_2.jpg" className="img-fluid mb-5" />
-              <h3 clas="">
-                <a href="#">
-                  <span className="">Jeremy</span> Walker
-                </a>
-              </h3>
-              <span className="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>
-                Separated they live in. Separated they live in Bookmarksgrove
-                right at the coast of the Semantics, a large language ocean.
-              </p>
-              <p className="mb-0">
-                <a href="#" className="more dark">
-                  Learn More <span className="icon-arrow_forward" />
-                </a>
-              </p>
-            </div>
+           
+            <Tmem one={{ image: "images/person_2.jpg", name: "Jeremy Walker ", postion: "CEO, Founder, Atty", description: " Separated they live in. Separated they live in Bookmarksgrov" , more:"Learn More"}}/>
             {/* End Column 2 */}
             {/* Start Column 3 */}
-            <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-              <img src="images/person_3.jpg" className="img-fluid mb-5" />
-              <h3 clas="">
-                <a href="#">
-                  <span className="">Patrik</span> White
-                </a>
-              </h3>
-              <span className="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>
-                Separated they live in. Separated they live in Bookmarksgrove
-                right at the coast of the Semantics, a large language ocean.
-              </p>
-              <p className="mb-0">
-                <a href="#" className="more dark">
-                  Learn More <span className="icon-arrow_forward" />
-                </a>
-              </p>
-            </div>
+            
+            <Tmem one={{ image: "images/person_3.jpg", name: "Patrik White", postion: "CEO, Founder, Atty", description: " Separated they live in. Separated they live in Bookmarksgrov" , more:"Learn More"}}/>
             {/* End Column 3 */}
             {/* Start Column 4 */}
-            <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-              <img src="images/person_4.jpg" className="img-fluid mb-5" />
-              <h3 clas="">
-                <a href="#">
-                  <span className="">Kathryn</span> Ryan
-                </a>
-              </h3>
-              <span className="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>
-                Separated they live in. Separated they live in Bookmarksgrove
-                right at the coast of the Semantics, a large language ocean.
-              </p>
-              <p className="mb-0">
-                <a href="#" className="more dark">
-                  Learn More <span className="icon-arrow_forward" />
-                </a>
-              </p>
-            </div>
+            <Tmem one={{ image: "images/person_4.jpg", name: "Kathryn Ryan", postion: "CEO, Founder, Atty", description: " Separated they live in. Separated they live in Bookmarksgrov" , more:"Learn More"}}/>
             {/* End Column 4 */}
           </div>
         </div>
