@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ContactForm() {
+  // let [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", message: "" })
+  // const handleChange = (e) => {
+  //   const {name,value} = e.target;
+  //   let data = {...formData,[name]:value}
+  //   setFormData(data)
+  // }
+  // console.log(formData);
+  //////////////////////////////////////////////
+  let [formData1, setFromData1] = useState({ firstName: "hello" })
+  let [formData2, setFromData2] = useState({ lastName: "jangid" })
+  let [formData3, setFromData3] = useState({ email: "jangid@gmail.com" })
+  let [formData4, setFromData4] = useState({ message: "jangid hello" })
+  // console.log(formData1["firstName"]);
+
+  const handleChange = (e) => {
+    setFromData1({ firstName: e["target"]["value"] })
+  }
+
+  const handleChange1 = (e) => {
+    setFromData2({ lastName: e["target"]["value"] })
+  }
+  const handleChange2 = (e) => {
+    setFromData3({ email: e["target"]["value"] })
+  }
+
+  const handleChange3 = (e) => {
+    setFromData4({ message: e["target"]["value"] })
+  }
+  const hanldeSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:3000/contact/insert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({firstName:formData1["firstName"],lastName:formData2["lastName"],email:formData3["email"],message:formData4["message"]}),
+    })
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+  }
   return (
     <>
-      <div className="untree_co-section">
+      <div className="untree_co-section" >
         <div className="container">
           <div className="block">
             <div className="row justify-content-center">
@@ -91,7 +131,7 @@ function ContactForm() {
                     {/* /.service */}
                   </div>
                 </div>
-                <form>
+                <form onSubmit={hanldeSubmit}>
                   <div className="row">
                     <div className="col-6">
                       <div className="form-group">
@@ -102,6 +142,8 @@ function ContactForm() {
                           type="text"
                           className="form-control"
                           id="fname"
+                          onChange={(e) => handleChange(e)}
+                          value={formData1["firstName"]}
                         />
                       </div>
                     </div>
@@ -111,6 +153,8 @@ function ContactForm() {
                           Last name
                         </label>
                         <input
+                          onChange={(e) => handleChange1(e)}
+                          value={formData2["lastName"]}
                           type="text"
                           className="form-control"
                           id="lname"
@@ -122,15 +166,17 @@ function ContactForm() {
                     <label className="text-black" htmlFor="email">
                       Email address
                     </label>
-                    <input type="email" className="form-control" id="email" />
+                    <input type="email" onChange={(e) => handleChange2(e)}
+                      value={formData3["email"]} className="form-control" id="email" />
                   </div>
                   <div className="form-group mb-5">
                     <label className="text-black" htmlFor="message">
                       Message
                     </label>
                     <textarea
-                      name=""
                       className="form-control"
+                      onChange={(e) => handleChange3(e)}
+                      value={formData4["message"]}
                       id="message"
                       cols={30}
                       rows={5}

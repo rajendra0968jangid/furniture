@@ -1,46 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardProductList from "./CardProductList";
 function ProductList() {
-  const[cardData,setCardData] = useState([{
-    productImage: "images/product-3.png",
-    productName: "hello",
-    productPrice: "100",
-  },{
-    productImage: "images/product-1.png",
-    productName: "Nordic Chair",
-    productPrice: "$50.00",
-  },{
-    productImage: "images/product-2.png",
-    productName: "Kruzo Aero Chair",
-    productPrice: "$78.00",
-  },{
-    productImage: "images/product-3.png",
-    productName: "Ergonomic Chair",
-    productPrice: "$43.00",
-  },{
-    productImage: "images/product-3.png",
-    productName: "Nordic Chair",
-    productPrice: "$50.00",
-  },{
-    productImage: "images/product-1.png",
-    productName: "Nordic Chair",
-    productPrice: "$50.00",
-  },{
-    productImage: "images/product-2.png",
-    productName: "Kruzo Aero Chair",
-    productPrice: "$78.00",
-  },{
-    productImage: "images/product-3.png",
-    productName: "Ergonomic Chair",
-    productPrice: "$43.00",
-  }])
+  const [cardData, setCardData] = useState([])
+  useEffect(() => {
+    const apiFetch = async () => {
+      const response = await fetch("http://localhost:3000/shop/alldata")
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+      setCardData(jsonResponse["data"])
+    }
+    apiFetch()
+  }, [])
   return (
     <>
       <div className="untree_co-section product-section before-footer-section">
         <div className="container">
           <div className="row">
-            {cardData.map((item,index)=>(
-              <CardProductList  one={item} />
+            {cardData.map((item, index) => (
+              <CardProductList one={item} />
             ))}
           </div>
         </div>
