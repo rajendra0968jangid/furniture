@@ -22,7 +22,7 @@ function OurTeams() {
           </div>
           <div className="row">
             {teamsData.map((item, index) => (
-              <Tmem one={item} />
+              <Tmem one={item} key={index}/>
             ))}
           </div>
         </div>

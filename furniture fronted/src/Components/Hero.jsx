@@ -1,7 +1,7 @@
 import React from "react";
 
 function Hero({ two }) {
-  console.log(two);
+  // console.log(two);
 
   return (
     <>

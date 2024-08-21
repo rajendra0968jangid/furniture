@@ -37,8 +37,8 @@ function CartPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartData.map((item,index)=>(
-                   <Hy item={item}/>
+                    {cartData.map((item, index) => (
+                      <Hy item={item} key={index} />
                     ))}
                   </tbody>
                 </table>
@@ -109,7 +109,7 @@ function CartPage() {
                     <div className="col-md-12">
                       <button
                         className="btn btn-black btn-lg py-3 btn-block"
-                        onclick="window.location='checkout.html'"
+                        onClick="window.location='checkout.html'"
                       >
                         <Link to="/checkout" className="text-white">
                           Proceed To Checkout

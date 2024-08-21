@@ -504,7 +504,7 @@ function CheckoutSection() {
                     <div className="form-group">
                       <button
                         className="btn btn-black btn-lg py-3 btn-block"
-                        onclick="window.location='thankyou.html'"
+                        onClick="window.location='thankyou.html'"
                       >
                         <Link to="/thankyou" className="text-white">
                         

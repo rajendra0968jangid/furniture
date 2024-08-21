@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Hy({item}) {
-    console.log(item);
+    // console.log(item);
     
   return (
     <>
