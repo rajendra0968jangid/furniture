@@ -9,37 +9,53 @@ app.use(bodyParser.json())
 app.use(cors())
 app.get('/shop/alldata', (req, res) => {
     let data = [{
+        id: 1,
         productImage: "images/product-3.png",
         productName: "hello",
-        productPrice: "100",
+        productPrice: 100,
+        pQuantity: 1
     }, {
+        id: 2,
         productImage: "images/product-1.png",
         productName: "Nordic Chair",
-        productPrice: "$50.00",
+        productPrice: 50.00,
+        pQuantity: 1
     }, {
+        id: 3,
         productImage: "images/product-2.png",
         productName: "Kruzo Aero Chair",
-        productPrice: "$78.00",
+        productPrice: 78.00,
+        pQuantity: 1
     }, {
+        id: 4,
         productImage: "images/product-3.png",
         productName: "Ergonomic Chair",
-        productPrice: "$43.00",
+        productPrice: 43.00,
+        pQuantity: 1
     }, {
+        id: 5,
         productImage: "images/product-3.png",
         productName: "Nordic Chair",
-        productPrice: "$50.00",
+        productPrice: 50.00,
+        pQuantity: 1
     }, {
+        id: 6,
         productImage: "images/product-1.png",
         productName: "Nordic Chair",
-        productPrice: "$50.00",
+        productPrice: 50.00,
+        pQuantity: 1
     }, {
+        id: 7,
         productImage: "images/product-2.png",
         productName: "Kruzo Aero Chair",
-        productPrice: "$78.00",
+        productPrice: 78.00,
+        pQuantity: 1
     }, {
+        id: 8,
         productImage: "images/product-3.png",
         productName: "Ergonomic Chair",
-        productPrice: "$43.00",
+        productPrice: 43.00,
+        pQuantity: 1
     }]
     res.json({ data: data })
 })
@@ -51,7 +67,7 @@ app.get('/about/teams', (req, res) => {
 
 app.post('/contact/insert', (req, res) => {
     let data = req.body;
-    console.log(data);    
+    console.log(data);
     //sql query or mongodb query
     res.json({ data: "", message: "Data inserted successfully" })
 })

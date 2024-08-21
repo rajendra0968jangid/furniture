@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ one }) {
+  let [cartData,setCardData] = useState(JSON.parse(localStorage.getItem("cartData"))||{length:0})
+  
   return (
     <>
       <nav
@@ -88,7 +90,7 @@ function Navbar({ one }) {
                       className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                       style={{ top: "-5px", left: 15, height: 20, minWidth: 20 }}
                     >
-                      0
+                      {cartData.length}
                     </span>
                   </a>
                 </Link>

@@ -4,20 +4,8 @@ import { Link } from "react-router-dom";
 import Hy from "./hy";
 
 function CartPage() {
-  let [cartData, setCartData] = useState([
-    {
-      pImage: "images/product-1.png",
-      pName: "Product 1",
-      pPrice: 49.00,
-      pQuantity: 10,
-    },
-    {
-      pImage: "images/product-2.png",
-      pName: "Product 2",
-      pPrice: 49.00,
-      pQuantity: 10,
-    },
-  ]);
+  let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem("cartData"))||[]);
+  
   return (
     <>
       <div className="untree_co-section before-footer-section">

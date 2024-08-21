@@ -8,15 +8,15 @@ function Hy({item}) {
        <tr>
                       <td className="product-thumbnail">
                         <img
-                          src={item["pImage"]}
+                          src={item["productImage"]}
                           alt="Image"
                           className="img-fluid"
                         />
                       </td>
                       <td className="product-name">
-                        <h2 className="h5 text-black">{item["pName"]}</h2>
+                        <h2 className="h5 text-black">{item["productName"]}</h2>
                       </td>
-                      <td>${item["pPrice"]}</td>
+                      <td>{item["productPrice"]}</td>
                       <td>
                         <div
                           className="input-group mb-3 d-flex align-items-center quantity-container"
@@ -49,7 +49,7 @@ function Hy({item}) {
                           </div>
                         </div>
                       </td>
-                      <td>${item["pPrice"]*item["pQuantity"]}</td>
+                      <td>${item["productPrice"]*item["pQuantity"]}</td>
                       <td>
                         <a href="#" className="btn btn-black btn-sm">
                           X
