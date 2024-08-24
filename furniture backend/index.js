@@ -1,6 +1,7 @@
+require("dotenv").config()
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT
 const cors = require("cors")
 const { Contact } = require("./conn.js")
 const bodyParser = require('body-parser')
@@ -69,10 +70,9 @@ app.get('/about/teams', (req, res) => {
 
 app.post('/contact/insert', async (req, res) => {
     let data = req.body;
-    // console.log(data);
+    console.log(data);
     const newContact = await Contact.create(data)
     const ContactData = await newContact.save()
-    
     res.json({ data: "", message: "Data inserted successfully" })
 })
 

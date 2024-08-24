@@ -5,7 +5,7 @@ function OurTeams() {
   let [teamsData, setTeamsData] = useState([])
   useEffect(() => {
     const apiFetch = async () => {
-      const response = await fetch("http://localhost:3000/about/teams")
+      const response = await fetch("http://localhost:8000/about/teams")
       const jsonResponse = await response.json()
       setTeamsData(jsonResponse["data"])
     }
