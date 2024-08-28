@@ -11,10 +11,39 @@ const contactSchema = new Schema({
     email: String,
     message: String
 });
+
+
+
 const Contact = mongoose.model('Contact', contactSchema);
 
 
-module.exports = {Contact}
+const orderschema = new Schema({
+    formdata: {
+      country:String,
+      firstname: String,
+      lastname: String,
+      companyName: String,
+      address: String,
+      state: String,
+      Zip: String,
+      email: String,
+      phoneNo: String,
+      Notes: String,
+    },
+    cartdata: [
+      {
+        id:Number,
+        productImage: String,
+        productName: String,
+        productPrice: Number,
+        pQuantity: Number,
+      },
+    ]
+  })
+const Order = mongoose.model('Order' ,orderschema)
+
+
+module.exports = {Contact,Order}
 
 
 
