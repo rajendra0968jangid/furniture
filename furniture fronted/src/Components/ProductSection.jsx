@@ -1,6 +1,6 @@
 import React from "react";
 import CardProductList from "./CardProductList";
-
+import { Link } from "react-router-dom";
 function ProductSection() {
   return (
     <>
@@ -8,7 +8,7 @@ function ProductSection() {
         <div className="container">
           <div className="row">
             {/* Start Column 1 */}
-            
+
             <div className="col-md-12 col-lg-3 mb-5 mb-lg-0">
               <h2 className="mb-4 section-title">
                 Crafted with excellent material.
@@ -18,9 +18,9 @@ function ProductSection() {
                 velit. Aliquam vulputate velit imperdiet dolor tempor tristique.{" "}
               </p>
               <p>
-                <a href="shop.html" className="btn">
+                <Link to="shop.html" className="btn">
                   Explore
-                </a>
+                </Link>
               </p>
             </div>
             {/* End Column 1 */}

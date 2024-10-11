@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function ThankYouPage() {
   return (
     <>
@@ -29,9 +29,9 @@ function ThankYouPage() {
               <h2 className="display-3 text-black">Thank you!</h2>
               <p className="lead mb-5">You order was successfuly completed.</p>
               <p>
-                <a href="shop.html" className="btn btn-sm btn-outline-black">
+                <Link to="/shop" className="btn btn-sm btn-outline-black">
                   Back to shop
-                </a>
+                </Link>
               </p>
             </div>
           </div>

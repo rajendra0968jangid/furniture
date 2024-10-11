@@ -4,8 +4,9 @@ import Tmem from "./Tmem";
 function OurTeams() {
   let [teamsData, setTeamsData] = useState([])
   useEffect(() => {
+    const url = import.meta.env.VITE_BACKEND_URL
     const apiFetch = async () => {
-      const response = await fetch("http://localhost:8000/about/teams")
+      const response = await fetch(url + "/about/teams")
       const jsonResponse = await response.json()
       setTeamsData(jsonResponse["data"])
     }
@@ -22,7 +23,7 @@ function OurTeams() {
           </div>
           <div className="row">
             {teamsData.map((item, index) => (
-              <Tmem one={item} key={index}/>
+              <Tmem one={item} key={index} />
             ))}
           </div>
         </div>

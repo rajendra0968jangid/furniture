@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function PopularProduct() {
   return (
     <>
@@ -10,7 +10,7 @@ function PopularProduct() {
               <div className="product-item-sm d-flex">
                 <div className="thumbnail">
                   <img
-                    src="images/product-1.png"
+                    src="./images/product-1.png"
                     alt="Image"
                     className="img-fluid"
                   />
@@ -22,7 +22,7 @@ function PopularProduct() {
                     odio{" "}
                   </p>
                   <p>
-                    <a href="#">Read More</a>
+                    <Link to="#">Read More</Link>
                   </p>
                 </div>
               </div>
@@ -31,7 +31,7 @@ function PopularProduct() {
               <div className="product-item-sm d-flex">
                 <div className="thumbnail">
                   <img
-                    src="images/product-2.png"
+                    src="./images/product-2.png"
                     alt="Image"
                     className="img-fluid"
                   />
@@ -43,7 +43,7 @@ function PopularProduct() {
                     odio{" "}
                   </p>
                   <p>
-                    <a href="#">Read More</a>
+                    <Link to="#">Read More</Link>
                   </p>
                 </div>
               </div>
@@ -52,7 +52,7 @@ function PopularProduct() {
               <div className="product-item-sm d-flex">
                 <div className="thumbnail">
                   <img
-                    src="images/product-3.png"
+                    src="./images/product-3.png"
                     alt="Image"
                     className="img-fluid"
                   />
@@ -64,7 +64,7 @@ function PopularProduct() {
                     odio{" "}
                   </p>
                   <p>
-                    <a href="#">Read More</a>
+                    <Link to="#">Read More</Link>
                   </p>
                 </div>
               </div>

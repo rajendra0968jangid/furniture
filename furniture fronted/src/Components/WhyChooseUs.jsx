@@ -17,7 +17,7 @@ function WhyChooseUs() {
                   <div className="feature">
                     <div className="icon">
                       <img
-                        src="images/truck.svg"
+                        src="./images/truck.svg"
                         alt="Image"
                         className="imf-fluid"
                       />
@@ -33,7 +33,7 @@ function WhyChooseUs() {
                   <div className="feature">
                     <div className="icon">
                       <img
-                        src="images/bag.svg"
+                        src="./images/bag.svg"
                         alt="Image"
                         className="imf-fluid"
                       />
@@ -49,7 +49,7 @@ function WhyChooseUs() {
                   <div className="feature">
                     <div className="icon">
                       <img
-                        src="images/support.svg"
+                        src="./images/support.svg"
                         alt="Image"
                         className="imf-fluid"
                       />
@@ -65,7 +65,7 @@ function WhyChooseUs() {
                   <div className="feature">
                     <div className="icon">
                       <img
-                        src="images/return.svg"
+                        src="./images/return.svg"
                         alt="Image"
                         className="imf-fluid"
                       />
@@ -82,7 +82,7 @@ function WhyChooseUs() {
             <div className="col-lg-5">
               <div className="img-wrap">
                 <img
-                  src="images/why-choose-us-img.jpg"
+                  src="./images/why-choose-us-img.jpg"
                   alt="Image"
                   className="img-fluid"
                 />

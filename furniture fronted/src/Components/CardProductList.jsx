@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 function CardProductList({ one }) {
   let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem("cartData")) || [])
   let [showIcon, setShowIcon] = useState(false)
@@ -24,7 +24,7 @@ function CardProductList({ one }) {
   return (
     <>
       <div className="col-12 col-md-4 col-lg-3 mb-5">
-        <a className="product-item" href="#">
+        <Link className="product-item" to="#">
           <img
             src={one["productImage"]}
             className="img-fluid product-thumbnail"
@@ -33,10 +33,10 @@ function CardProductList({ one }) {
           <strong className="product-price">{one["productPrice"]}</strong>
           {showIcon && (
             <span className="icon-cross" onClick={handleCartData}>
-              <img src="images/cross.svg" className="img-fluid" />
+              <img src="./images/cross.svg" className="img-fluid" />
             </span>
           )}
-        </a>
+        </Link>
       </div>
     </>
   );

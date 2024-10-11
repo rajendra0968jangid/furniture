@@ -5,7 +5,10 @@ function ProductList() {
   const [cardData, setCardData] = useState([])
   useEffect(() => {
     const apiFetch = async () => {
-      const response = await fetch("http://localhost:8000/shop/alldata")
+      const url = import.meta.env.VITE_BACKEND_URL
+      console.log(url);
+      
+      const response = await fetch(url + "/shop/alldata")
       const jsonResponse = await response.json();
       // console.log(jsonResponse);
       setCardData(jsonResponse["data"])

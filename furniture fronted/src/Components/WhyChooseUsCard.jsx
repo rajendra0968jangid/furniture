@@ -11,7 +11,7 @@ function WhyChooseUsCard() {
               <div className="feature">
                 <div className="icon">
                   <img
-                    src="images/truck.svg"
+                    src="./images/truck.svg"
                     alt="Image"
                     className="imf-fluid"
                   />

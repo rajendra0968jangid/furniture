@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar({ one }) {
-  let [cartData,setCardData] = useState(JSON.parse(localStorage.getItem("cartData"))||{length:0})
-  
+  let [cartData, setCardData] = useState(JSON.parse(localStorage.getItem("cartData")) || { length: 0 })
+
   return (
     <>
       <nav
@@ -79,20 +79,20 @@ function Navbar({ one }) {
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
                 <Link className="nav-link" to="">
-                  <img src="images/user.svg" />
+                  <img src="./images/user.svg" />
                 </Link>
               </li>
               <li>
                 <Link className="nav-link" to="/cart">
-                  <a href="#" className="position-relative me-4 my-auto">
-                    <img src="images/cart.svg" />
+                  <Link to="#" className="position-relative me-4 my-auto">
+                    <img src="./images/cart.svg" />
                     <span
                       className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                       style={{ top: "-5px", left: 15, height: 20, minWidth: 20 }}
                     >
                       {cartData.length}
                     </span>
-                  </a>
+                  </Link>
                 </Link>
               </li>
             </ul>

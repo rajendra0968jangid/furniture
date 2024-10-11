@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function HelpSection() {
   return (
     <>
@@ -9,13 +9,13 @@ function HelpSection() {
             <div className="col-lg-7 mb-5 mb-lg-0">
               <div className="imgs-grid">
                 <div className="grid grid-1">
-                  <img src="images/img-grid-1.jpg" alt="Untree.co" />
+                  <img src="./images/img-grid-1.jpg" alt="Untree.co" />
                 </div>
                 <div className="grid grid-2">
-                  <img src="images/img-grid-2.jpg" alt="Untree.co" />
+                  <img src="./images/img-grid-2.jpg" alt="Untree.co" />
                 </div>
                 <div className="grid grid-3">
-                  <img src="images/img-grid-3.jpg" alt="Untree.co" />
+                  <img src="./images/img-grid-3.jpg" alt="Untree.co" />
                 </div>
               </div>
             </div>
@@ -36,9 +36,9 @@ function HelpSection() {
                 <li>Donec vitae odio quis nisl dapibus malesuada</li>
               </ul>
               <p>
-                <a herf="#" className="btn">
+                <Link to="#" className="btn">
                   Explore
-                </a>
+                </Link>
               </p>
             </div>
           </div>

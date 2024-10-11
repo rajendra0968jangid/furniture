@@ -2,34 +2,35 @@ import React, { useState } from "react";
 import { json, Link, useNavigate } from "react-router-dom";
 
 function CheckoutSection() {
-  let [formdata,setformdata]= useState({country:"India",firstname:"manish",lastname:"solanki",companyName:"XYZ",address:"jaipur",state:"Rajasthan",Zip:"302028",email:"manish@gmail.com",phoneNo:"9878459898",Notes:"helo every one"})
-  let nevigate=useNavigate()
+  let [formdata, setformdata] = useState({ country: "India", firstname: "manish", lastname: "solanki", companyName: "XYZ", address: "jaipur", state: "Rajasthan", Zip: "302028", email: "manish@gmail.com", phoneNo: "9878459898", Notes: "helo every one" })
+  let nevigate = useNavigate()
 
-  let[cartdata,setcartdata]=useState(JSON.parse(localStorage.getItem('cartData'))||[])
+  let [cartdata, setcartdata] = useState(JSON.parse(localStorage.getItem('cartData')) || [])
 
 
-  const handlechange=(e)=>{
-  
-    const {name,value} = e.target;
-     let data = {...formdata,[name]:value}
-      setformdata(data)
-}
-const handlesubmit= async()=>{
-  const response = await fetch("http://localhost:8000/checkout/insert", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({formdata,cartdata}),
-  })
-  const jsonResponse = await response.json();
-  console.log(jsonResponse);
-  window.alert(jsonResponse["message"])
-  localStorage.removeItem("cartData")
-  nevigate("/thankyou") 
+  const handlechange = (e) => {
 
-  
-}
+    const { name, value } = e.target;
+    let data = { ...formdata, [name]: value }
+    setformdata(data)
+  }
+  const handlesubmit = async () => {
+    const url = import.meta.env.VITE_BACKEND_URL
+    const response = await fetch(url + "/checkout/insert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formdata, cartdata }),
+    })
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+    window.alert(jsonResponse["message"])
+    localStorage.removeItem("cartData")
+    nevigate("/thankyou")
+
+
+  }
 
   return (
     <>
@@ -38,7 +39,7 @@ const handlesubmit= async()=>{
           <div className="row mb-5">
             <div className="col-md-12">
               <div className="border p-4 rounded" role="alert">
-                Returning customer? <a href="#">Click here</a> to login
+                Returning customer? <Link to="#">Click here</Link> to login
               </div>
             </div>
           </div>
@@ -50,8 +51,8 @@ const handlesubmit= async()=>{
                   <label htmlFor="c_country" className="text-black">
                     Country <span className="text-danger">*</span>
                   </label>
-                  <select id="c_country" className="form-control" value={formdata["country"]} name="country"  onChange={(e)=>handlechange(e)}>
-                    
+                  <select id="c_country" className="form-control" value={formdata["country"]} name="country" onChange={(e) => handlechange(e)}>
+
                     <option value={""}>Select a country</option>
                     <option value={"India"}>India</option>
                     <option value={"bangladesh"}>bangladesh</option>
@@ -63,7 +64,7 @@ const handlesubmit= async()=>{
                     <option value={"Colombia"}>Colombia</option>
                     <option value={"Dominican Republic"}>Dominican Republic</option>
 
-                    
+
                   </select>
                 </div>
                 <div className="form-group row">
@@ -72,12 +73,12 @@ const handlesubmit= async()=>{
                       First Name <span className="text-danger">*</span>
                     </label>
                     <input
-                   
+
                       type="text"
                       className="form-control"
                       id="c_fname"
                       name="firstname"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                       value={formdata["firstname"]}
                     />
                   </div>
@@ -86,8 +87,8 @@ const handlesubmit= async()=>{
                       Last Name <span className="text-danger">*</span>
                     </label>
                     <input
-                     onChange={(e)=>handlechange(e)}
-                    value={formdata["lastname"]}
+                      onChange={(e) => handlechange(e)}
+                      value={formdata["lastname"]}
                       type="text"
                       className="form-control"
                       id="c_lname"
@@ -101,12 +102,12 @@ const handlesubmit= async()=>{
                       Company Name{" "}
                     </label>
                     <input
-                    value={formdata["companyName"]}
+                      value={formdata["companyName"]}
                       type="text"
                       className="form-control"
                       id="c_companyname"
                       name="companyName"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                     />
                   </div>
                 </div>
@@ -116,13 +117,13 @@ const handlesubmit= async()=>{
                       Address <span className="text-danger">*</span>
                     </label>
                     <input
-                    value={formdata["address"]}
+                      value={formdata["address"]}
                       type="text"
                       className="form-control"
                       id="c_address"
                       name="address"
                       placeholder="Street address"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                     />
                   </div>
                 </div>
@@ -139,12 +140,12 @@ const handlesubmit= async()=>{
                       State / Country <span className="text-danger">*</span>
                     </label>
                     <input
-                    value={formdata["state"]}
+                      value={formdata["state"]}
                       type="text"
                       className="form-control"
                       id="c_state_country"
                       name="state"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                     />
                   </div>
                   <div className="col-md-6">
@@ -152,12 +153,12 @@ const handlesubmit= async()=>{
                       Posta / Zip <span className="text-danger">*</span>
                     </label>
                     <input
-                    value={formdata["Zip"]}
+                      value={formdata["Zip"]}
                       type="text"
                       className="form-control"
                       id="c_postal_zip"
                       name="Zip"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                     />
                   </div>
                 </div>
@@ -167,12 +168,12 @@ const handlesubmit= async()=>{
                       Email Address <span className="text-danger">*</span>
                     </label>
                     <input
-                    value={formdata["email"]}
+                      value={formdata["email"]}
                       type="text"
                       className="form-control"
                       id="c_email_address"
                       name="email"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                     />
                   </div>
                   <div className="col-md-6">
@@ -180,13 +181,13 @@ const handlesubmit= async()=>{
                       Phone <span className="text-danger">*</span>
                     </label>
                     <input
-                    value={formdata["phoneNo"]}
+                      value={formdata["phoneNo"]}
                       type="text"
                       className="form-control"
                       id="c_phone"
                       name="phoneNo"
                       placeholder="Phone Number"
-                      onChange={(e)=>handlechange(e)}
+                      onChange={(e) => handlechange(e)}
                     />
                   </div>
                 </div>
@@ -195,7 +196,7 @@ const handlesubmit= async()=>{
                     htmlFor="c_create_account"
                     className="text-black"
                     data-bs-toggle="collapse"
-                    href="#create_an_account"
+                    to="#create_an_account"
                     role="button"
                     aria-expanded="false"
                     aria-controls="create_an_account"
@@ -237,7 +238,7 @@ const handlesubmit= async()=>{
                     htmlFor="c_ship_different_address"
                     className="text-black"
                     data-bs-toggle="collapse"
-                    href="#ship_different_address"
+                    to="#ship_different_address"
                     role="button"
                     aria-expanded="false"
                     aria-controls="ship_different_address"
@@ -398,7 +399,7 @@ const handlesubmit= async()=>{
                     Order Notes
                   </label>
                   <textarea
-                  value={formdata["Notes"]}
+                    value={formdata["Notes"]}
                     name="Notes"
                     id="c_order_notes"
                     cols={30}
@@ -406,7 +407,7 @@ const handlesubmit= async()=>{
                     className="form-control"
                     placeholder="Write your notes here..."
                     defaultValue={""}
-                    onChange={(e)=>handlechange(e)}
+                    onChange={(e) => handlechange(e)}
                   />
                 </div>
               </div>
@@ -483,16 +484,16 @@ const handlesubmit= async()=>{
                     </table>
                     <div className="border p-3 mb-3">
                       <h3 className="h6 mb-0">
-                        <a
+                        <Link
                           className="d-block"
                           data-bs-toggle="collapse"
-                          href="#collapsebank"
+                          to="#collapsebank"
                           role="button"
                           aria-expanded="false"
                           aria-controls="collapsebank"
                         >
                           Direct Bank Transfer
-                        </a>
+                        </Link>
                       </h3>
                       <div className="collapse" id="collapsebank">
                         <div className="py-2">
@@ -507,16 +508,16 @@ const handlesubmit= async()=>{
                     </div>
                     <div className="border p-3 mb-3">
                       <h3 className="h6 mb-0">
-                        <a
+                        <Link
                           className="d-block"
                           data-bs-toggle="collapse"
-                          href="#collapsecheque"
+                          to="#collapsecheque"
                           role="button"
                           aria-expanded="false"
                           aria-controls="collapsecheque"
                         >
                           Cheque Payment
-                        </a>
+                        </Link>
                       </h3>
                       <div className="collapse" id="collapsecheque">
                         <div className="py-2">
@@ -531,16 +532,16 @@ const handlesubmit= async()=>{
                     </div>
                     <div className="border p-3 mb-5">
                       <h3 className="h6 mb-0">
-                        <a
+                        <Link
                           className="d-block"
                           data-bs-toggle="collapse"
-                          href="#collapsepaypal"
+                          to="#collapsepaypal"
                           role="button"
                           aria-expanded="false"
                           aria-controls="collapsepaypal"
                         >
                           Paypal
-                        </a>
+                        </Link>
                       </h3>
                       <div className="collapse" id="collapsepaypal">
                         <div className="py-2">
@@ -557,11 +558,11 @@ const handlesubmit= async()=>{
                       <button
                         className="btn btn-black btn-lg py-3 btn-block"
                         // onClick="window.location='thankyou.html'" 
-                        onClick={()=>handlesubmit()}
+                        onClick={() => handlesubmit()}
                       >
                         <span className="text-white" >
-                        
-                        Place Order
+
+                          Place Order
                         </span>
                       </button>
                     </div>

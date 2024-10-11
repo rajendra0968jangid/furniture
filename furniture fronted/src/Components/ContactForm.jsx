@@ -31,12 +31,13 @@ function ContactForm() {
   }
   const hanldeSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8000/contact/insert", {
+    const url = import.meta.env.VITE_BACKEND_URL
+    const response = await fetch(url + "/contact/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({firstName:formData1["firstName"],lastName:formData2["lastName"],email:formData3["email"],message:formData4["message"]}),
+      body: JSON.stringify({ firstName: formData1["firstName"], lastName: formData2["lastName"], email: formData3["email"], message: formData4["message"] }),
     })
     const jsonResponse = await response.json();
     console.log(jsonResponse);
